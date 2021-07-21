@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fastapi-github-oauth"
+version = "0.1.0"
+description = "An attempt to isolate the github oauth in a fastapi context."
+authors = ["arrrrrmin"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.66.1"
+python-dotenv = "^0.18.0"
+uvicorn = "^0.14.0"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

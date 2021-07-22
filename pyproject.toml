@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "fastapi-github-oauth"
 version = "0.1.0"
-description = "An attempt to isolate the github oauth in a fastapi context."
+description = "An isolated example to show github authorization-code oauth flow in fastapi for web application flow + simple HttpBearer route dependency"
 authors = ["arrrrrmin"]
 
 [tool.poetry.dependencies]

@@ -26,7 +26,10 @@ class Github(BaseModel):
     settings: Settings = Settings()
 
     def get_init_auth_url(self):
-        request_params = {"client_id": self.settings.CLIENT_ID}
+        request_params = {
+            "client_id": self.settings.CLIENT_ID,
+            "scope": self.settings.SCOPE,
+        }
         return "{0}/?{1}".format(self.INIT_AUTH_URL, urlencode(request_params))
 
     def get_access_token(self, code) -> helpers.GithubTokenRespone:

@@ -23,7 +23,7 @@ def get_settings():
 oauth2_scheme = OAuth2AuthorizationCodeBearer(
     authorizationUrl="/request/login",
     tokenUrl="/secure/content",
-    scopes=get_settings().get_scopes_as_map(),
+    scopes=get_settings().get_scope_as_map(),
     auto_error=True
 )
 

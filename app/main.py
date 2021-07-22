@@ -37,15 +37,16 @@ async def info(settings: Settings = Depends(get_settings)):
 
 
 @app.get("/auth/request", response_class=RedirectResponse, status_code=302)
-async def request_login(settings: Settings = Depends(get_settings)):
-    url = auth.get_init_auth_url()
-    return url
+async def request_login():
+    """ Route to redirect front end clients. """
+    return auth.get_init_auth_url()
 
 
 @app.get("/auth/login", response_model=Dict)
 async def auth_login(code: str):
-    token = auth.get_access_token_from_code(code)
-    user = auth.get_user_data(token)
+    """ Callback from oauth provider. """
+    token = auth.get_access_token(code)
+    user = auth.get_user_data(token.access_token)
     return {
         "Id": user.id,
         "Login": user.login,
@@ -56,6 +57,7 @@ async def auth_login(code: str):
 
 @app.get("/secure/content", response_model=Dict)
 async def secure_route(user: helpers.AuthorizedResponse = Depends(auth.authorized_user)):
+    """ Secure route with an authenticated user as route dependency. """
     return {
         "You": user,
         "Message": "Nice, your authorized 🎉"

@@ -1,5 +1,6 @@
 # fastapi-github-oauth
-An isolated example to show github authorization-code oauth flow in fastapi. 
+An isolated example to show github authorization-code oauth flow in fastapi for 
+**web application flow** + **simple HttpBearer route dependency**.
 
 ## general information
 * [building-oauth-apps](https://docs.github.com/en/developers/apps/building-oauth-apps)

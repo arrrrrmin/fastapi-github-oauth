@@ -3,6 +3,7 @@ name = "fastapi-github-oauth"
 version = "0.1.0"
 description = "An isolated example to show github authorization-code oauth flow in fastapi for web application flow + simple HttpBearer route dependency"
 authors = ["arrrrrmin"]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"
